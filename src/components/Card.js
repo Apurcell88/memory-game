@@ -1,7 +1,8 @@
-const Card = () => {
+const Card = (props) => {
   return (
-    <div>
-      
+    <div className="card">
+      <img src="" alt="" />
+      <p>name</p>
     </div>
   );
 }

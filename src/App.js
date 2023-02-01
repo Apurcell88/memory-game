@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header'
 import Card from './components/Card';
 
@@ -8,7 +8,20 @@ function App() {
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
 
+  // pokemon state
+  const [pokemon, setPokemon] = useState([])
+
   // make api call to fetch card data
+  useEffect(() => {
+    async function getPokemon() {
+      const res = await fetch('https://pokeapi.co/api/v2/pokemon/');
+      const data = await res.json();
+      setPokemon(data.results)
+      console.log(pokemon)
+    }
+
+    getPokemon()
+  }, []);
 
   return (
     <div className="App">
@@ -16,7 +29,9 @@ function App() {
         score={score}
         highScore={highScore}
       />
-      {/* map over card data and create Card components */}
+      <div className='card-wrapper'>
+        {/* map over card data and create Card components */}
+      </div>
     </div>
   );
 }
