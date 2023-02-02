@@ -16,8 +16,7 @@ function App() {
     async function getPokemon() {
       const res = await fetch('https://pokeapi.co/api/v2/pokemon/');
       const data = await res.json();
-      setPokemon(data.results)
-      console.log(pokemon)
+      setPokemon(data.results);
     }
 
     getPokemon()
@@ -30,7 +29,17 @@ function App() {
         highScore={highScore}
       />
       <div className='card-wrapper'>
-        {/* map over card data and create Card components */}
+        {/* map over pokemon and create Card components */}
+        {pokemon.map((poke, index) => {
+          return (
+            <Card
+              key={poke.name}
+              name={poke.name}
+              index={index}
+            />
+          )
+        })
+        }
       </div>
     </div>
   );
