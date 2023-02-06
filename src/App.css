@@ -31,6 +31,10 @@ body {
   margin-bottom: 0.3rem;
 }
 
+.description-container {
+  margin-bottom: 1rem;
+}
+
 .description-text {
   margin-left: 1rem;
 }

@@ -8,7 +8,7 @@ const Header = (props) => {
           <p className="score-text">High score: {props.highScore}</p>
         </div>
       </div>
-      <div>
+      <div className="description-container">
         <p className="description-text">Score points by clicking on an image that hasn't been clicked yet</p>
       </div>
     </header>
