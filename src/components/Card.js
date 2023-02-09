@@ -5,7 +5,7 @@ const Card = (props) => {
       console.log(props.name, props.url)
       props.setPokemon([...props.pokemon])
     }}>
-      <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${props.index + 1}.png`} alt={props.name} />
+      <img src={props.url} alt={props.name} />
       <p>{props.name}</p>
     </div>
   );
