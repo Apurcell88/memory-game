@@ -5,15 +5,18 @@ import Card from './components/Card';
 
 function App() {
   let id = 0;
+
   // score state
-  const [score, setScore] = useState(0);
+  let [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
 
   // pokemon state
   const [pokemon, setPokemon] = useState([])
 
+  // state to hold clicked pokemon
+  const [clickedPokemon, setClickedPokemon] = useState([]);
+
   // make api call to fetch card data
-  
   useEffect(() => {
     async function getPokemon() {
       const res = await fetch('https://pokeapi.co/api/v2/pokemon/');
@@ -23,14 +26,18 @@ function App() {
       pokemons.map(async pokemon => {
         pokemon.data = await fetch(pokemon.url);
         const url = await pokemon.data.json()
-        console.log(url.name, url.sprites.back_default)
-        // console.log(pokemon.data)
-        setPokemon((prev) => [...prev, {name: url.name, sprite: url.sprites.back_default}])
+        setPokemon((prev) => [...prev, {name: url.name, sprite: url.sprites.front_default}])
       }) 
     }
 
     getPokemon()
   }, []);
+
+  // update score
+  const handleScore = () => {
+    
+    
+  }
 
   // shuffle pokemon function
   const shuffle = (arr) => {
@@ -69,6 +76,13 @@ function App() {
               setPokemon={setPokemon}
               pokemon={pokemon}
               shuffle={shuffle}
+              score={score}
+              setScore={setScore}
+              highScore={highScore}
+              setHighScore={setHighScore}
+              handleScore={handleScore}
+              clickedPokemon={clickedPokemon}
+              setClickedPokemon={setClickedPokemon}
             />
           )
         })

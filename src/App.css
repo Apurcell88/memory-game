@@ -8,6 +8,7 @@
 body {
   background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(106,167,41,1) 0%, rgba(35,27,37,1) 100%);
   color: white;
+  letter-spacing: 0.8px;
 }
 
 /* -------- HEADER STYLES -------- */
@@ -20,6 +21,7 @@ body {
 
 .title-text {
   font-size: 2.5rem;
+  margin-left: 1rem;
 }
 
 .score-container {
@@ -33,6 +35,8 @@ body {
 
 .description-container {
   margin-bottom: 1rem;
+  margin-left: 1rem;
+  width: 50%;
 }
 
 .description-text {
@@ -54,7 +58,48 @@ body {
   align-items: center;
   border: 1px black solid;
   border-radius: 10px;
-  box-shadow: 0px 0px 14px #324ca8;
   margin: 0.55rem;
   background-color: rgba(94, 214, 126, 0.15);
+}
+
+.card:hover {
+  box-shadow: 0px 0px 14px #324ca8;
+}
+
+/* -------- TABLET STYLES -------- */
+@media screen and (min-width: 481px) {
+  .card {
+    width: 32%;
+    padding-bottom: 5px;
+  }
+}
+
+/* -------- SMALL SCREENS, LAPTOP STYLES -------- */
+@media screen and (min-width: 769px) {
+  .title-text {
+    font-size: 3.5rem;
+  }
+
+  .score-text {
+    font-size: 1.5rem;
+  }
+
+  .description-text {
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+  }
+}
+
+/* -------- DESKTOPS, LARGE SCREENS STYLES -------- */
+@media screen and (min-width: 1025px) {
+  .card {
+    width: 25%;
+  }
+}
+
+/* -------- EXTRA LARGE SCREENS STYLES -------- */
+@media screen and (min-width: 1201px) {
+  .card {
+    width: 20%;
+  }
 }
