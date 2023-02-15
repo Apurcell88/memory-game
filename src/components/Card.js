@@ -2,14 +2,14 @@ const Card = (props) => {
   return (
     <div className="card" onClick={(e) => {
       // updates the score
-      if (props.clickedPokemon.includes(e.target.alt)) {
+      if (props.clickedPokemon.includes(props.name)) {
         props.setScore(0);
         props.setClickedPokemon([])
         if (props.score > props.highScore) {
           props.setHighScore(props.score)
         }
       } else {
-        props.setClickedPokemon(prev => [...prev, e.target.alt])
+        props.setClickedPokemon(prev => [...prev, props.name])
         props.setScore(props.score + 1)
       }
 

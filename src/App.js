@@ -74,7 +74,6 @@ function App() {
               setScore={setScore}
               highScore={highScore}
               setHighScore={setHighScore}
-              handleScore={handleScore}
               clickedPokemon={clickedPokemon}
               setClickedPokemon={setClickedPokemon}
             />
