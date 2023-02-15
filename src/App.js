@@ -33,12 +33,6 @@ function App() {
     getPokemon()
   }, []);
 
-  // update score
-  const handleScore = () => {
-    
-    
-  }
-
   // shuffle pokemon function
   const shuffle = (arr) => {
     let currentIndex = arr.length, randomIndex;
